@@ -39,20 +39,7 @@ namespace atbash
 
             }
             return decripted;
-                
-            //{
-
-            //if (newtxt[i] == 'a')
-            //{
-            //    string a = newtxt.Replace('a', 'z');
-            //    decript.Add(a);
-            //}
-            //else if (newtxt[i] == 'b') ;
-            //{
-            //    string a = newtxt.Replace('b', 'y');
-            //    decript.Add(a);
-            //}
-
+         
 
         }
         
@@ -66,7 +53,7 @@ namespace atbash
             {
                 foreach (string dangerous in dangerousWords)
                 {
-                    if(word == dangerous)
+                    if (word.Contains(dangerous))
                     {
                         count++;
                     }
