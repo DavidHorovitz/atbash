@@ -10,7 +10,7 @@ namespace atbash
     internal class Program
     {
         //Receives translated ciphertext, counts the number of dangerous words, returns both.   
-        static string dangerousWords(string message)
+        static (string,int) dangerousWords(string message)
         {
             int count = 0;  
             string[] messageList = message.Split(' '); 
@@ -25,7 +25,7 @@ namespace atbash
                     }
                 }
             }
-            return message+ "       count of dangerous words: " +count;
+            return (message,count);
         }
 
         //Writes a message according to the risk level and prints everything
@@ -66,7 +66,13 @@ namespace atbash
 
         static void Main(string[] args)
         {
-            Console.WriteLine(dangerousWords("jhtkvyb bomb kjhg bomb"));
+            var (message, count) = dangerousWords("shbdbomb nukhba fghfstgbgft fighter");
+            riskLevel(message, count);
+            
+            
+            
+            
+
         }
     }
 }
